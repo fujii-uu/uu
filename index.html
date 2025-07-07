@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- OGP・SNS -->
+  <meta property="og:title" content="山西貴大 | Yamanishi Takahiro">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://uu-fujii.com/">
+  <meta property="og:image" content="http://uu-fujii.com//img/favicon/Yicon-180.png?v=20250701">
+  <meta property="og:description" content="藤井憂憂のホームページ">
+  <meta property="og:site_name" content="山西貴大 | Yamanishi Takahiro">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- CSS・フォント -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+  <!-- favicon・スマホ対応 -->
+  <link rel="icon" href="img/favicon/Yfavicon.ico?v=20250701" sizes="32x32">
+  <link rel="icon" href="img/favicon/Yicon-512.png" sizes="512x512">
+  <link rel="icon" href="img/favicon/Yicon.svg?v=20250701" type="image/svg+xml">
+  <link rel="Yapple-touch-icon" href="img/favicon/Yicon-180.png?v=20250701">
+
+  <!-- Web App manifest -->
+  <link rel="manifest" href="img/favicon/manifest.webmanifest?v=20250701">
+
+  <!-- iOS ホーム画面対応 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="山西貴大">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+
+<body>
+  <div class="image-center">
+    <img src="img/bar.svg" alt="バーの画像" class="bar-img">
+    <img src="img/vase.svg" alt="ベースの画像" class="main-img">
+
+    <!-- すべてここに入れる -->
+    <div class="sns-buttons">
+      <a href="https://x.com/FUJII_UU" target="_blank" class="btn x">
+        <img src="img/x.svg" alt="x" />
+      </a>
+      <a href="https://www.instagram.com/fujii_uu/" target="_blank" class="btn insta">
+        <img src="img/insta.svg" alt="Instagram" />
+      </a>
+      <a href="https://facebook.com/" target="_blank" class="btn note">
+        <img src="img/note.svg" alt="note" />
+      </a>
+    </div>
+    <a href="mailto:s-ishimoto@imagirick.co.jp">
+     <img src="img/contact.svg" alt="contact" class="contact">
+    </a>
+
+    <img src="img/imagiric.svg" alt="imagiric" class="imagiric">
+    <img src="img/line-2.svg" alt="ロングライン1" class="long-line-2">
+    <img src="img/line-3.svg" alt="ロングライン1" class="long-line-3">
+    <img src="img/line-4.svg" alt="ロングライン1" class="long-line-4">
+    <img src="img/name.svg" alt="ネーム画像" class="name-img">
+    <a href="https://nankyoku.jp/yuugai-tour.html" target="_blank">
+    <img src="img/next-stage.svg" alt="次のステージ画像" class="next-stage-img">
+    </a>
+
+    
+    <a href="https://www.fujii-uu.com/" target="_blank">
+     <img src="img/bard.jpeg" alt="サムネイル" class="thumbnail">
+    </a>
+
+    <a href="https://www.fujii-uu.com/" target="_blank">
+     <img src="img/shingo.JPG" alt="サムネイル２" class="thumbnail-1">
+    </a>
+
+    <a href="https://www.fujii-uu.com/" target="_blank">
+     <img src="img/tobigeri.jpg" alt="サムネイル３" class="thumbnail-2">
+    </a>
+
+    <img src="img/back.svg" alt="バック画像" class="back-img-1">
+    <img src="img/back.svg" alt="バック画像" class="back-img-2">
+    <img src="img/back.svg" alt="バック画像" class="back-img-3">
+
+    <img src="img/plus.svg" alt="プラス画像" class="plus-img">
+
+    <img src="img/White.svg" alt="ホワイト画像" class="White-img">
+    
+
+    <img src="img/icon-stage.svg" alt="stageアイコン" class="icon-common icon-stage">
+    <img src="img/icon-movie.svg" alt="movieアイコン" class="icon-common icon-movie">
+    <img src="img/icon-other.svg" alt="otherアイコン" class="icon-common icon-other">
+
+
+    <p class="press-start stage">Stage</p>
+    <p class="press-start movie">Movie</p>
+    <p class="press-start other">Others?</p>
+
+    <p class="file">Favorite Files</p>
+
+   <div class="image-container">
+    <img src="img/search.svg" alt="サーチ" class="search">
+    <p class="visitor">
+    あなたは<span id="todayCount">20</span>番目の訪問です♪
+    </p>
+   </div>
+<script>
+  const namespace = "fujii-uu"; // 任意の名前に変更
+  const keyToday = "today-visitor";
+  const keyYesterday = "yesterday-visitor"; // 昨日は手動更新などで対応
+
+  // 今日の訪問者数をCountAPIから取得して表示
+  fetch(`https://api.countapi.xyz/hit/${namespace}/${keyToday}`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('todayCount').textContent = data.value;
+    })
+    .catch(() => {
+      document.getElementById('todayCount').textContent = "エラー";
+    });
+
+  // 昨日の訪問者は手動で設定するか別途APIから取得して表示
+  const yesterdayVisitors = 10;
+  document.getElementById('yesterdayCount').textContent = yesterdayVisitors;
+</script>
+
+    
+
+  </div>
+</body>
+
+
+
+

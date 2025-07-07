@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Timmana&display=swap');
+
+
+.sans {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+.serif {
+  font-family: "Roboto", "Noto Serif JP", serif;
+}
+.zen-kaku {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+}
+
+.timmana {
+  font-family: 'Timmana', sans-serif;
+}
+
+
+/* 全体のレイアウト */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #008080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.image-center {
+  position: relative;  /* 追加する */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-img {
+  position: relative; /* または absolute */
+  z-index: 0; 
+  width: 800px;   /* サイズは好きに */
+  margin: 0;      /* 隙間なし */
+}
+
+.main-img {
+  width: 800px;   /* サイズ揃えるとキレイ */
+  margin: 0; 
+  position: relative;     /* 隙間なし */
+}
+
+
+
+
+.next-stage-img {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: 111px;  /* サイズはお好みで調整してください */
+  height: auto;
+  z-index: 20; /* ほかの画像より手前に表示 */
+}
+
+
+.sns-buttons {
+  position: absolute;
+  top: 195px;      /* 親の高さの真ん中 */
+  right: 320px;    /* 親の右端から40%離す */
+  transform: translate(50%, -50%); /* 自分の中心を位置の基準に */
+  display: flex;
+  gap: 6px;
+}
+
+
+.sns-buttons .btn img {
+  width: 199px;
+  height: auto;
+}
+
+
+
+
+
+/* name-img と next-stage-img は個別に */
+.name-img {
+  position: absolute;
+  top: 92px;
+  left: 11px;
+  width: 170px;
+  height: auto;
+  z-index: 20; /* もっと前面に表示 */
+}
+
+.next-stage-img {
+  position: absolute;
+  top: 50px;
+  left: 47px;
+  width: 111px;
+  height: auto;
+  z-index: 20; /* もっと前面に表示 */
+}
+
+
+
+.long-line-2 {
+  position: absolute;
+  top: 155px;
+  right:20px;
+  width: 600px;
+}
+
+.long-line-3 {
+  position: absolute;
+  top: 155px;
+  left:10px;
+  width: 600px;
+}
+
+.long-line-4 {
+  position: absolute;
+  top: 162px;
+  left:10px;
+  width: 600px;
+}
+
+
+
+.thumbnail {
+  width: 190px;
+  height: 220px; /* 好きな高さを指定 */
+  position: absolute;
+  z-index: 1; 
+  right: 431px;
+  top: 220px;
+  object-fit: cover; /* 枠いっぱいにトリミングして収める */
+}
+
+
+.thumbnail-1 {
+  width: 190px;
+  height: 220px; /* 好きな高さを指定 */
+  position: absolute;
+  z-index: 1; 
+  right: 225px;
+  top: 220px;
+  object-fit: cover; /* 枠いっぱいにトリミングして収める */
+}
+
+
+.thumbnail-2 {
+  width: 190px;
+  height: 220px; /* 好きな高さを指定 */
+  position: absolute;
+  z-index: 5; 
+  right: 20px;
+  top: 220px;
+  object-fit: cover; /* 枠いっぱいにトリミングして収める */
+}
+
+.three-images {
+  position: absolute;
+  top: 100px;          /* 好きな位置 */
+  left: 50px;          /* 好きな位置 */
+  display: flex;
+  gap: 10px;
+  z-index: 5;          /* main-imgより前・サムネイルより後 */
+}
+
+.three-img {
+  width: 150px;        /* 好きなサイズ */
+  height: auto;
+}
+
+
+.back-img-1 {
+  width: 200px;       /* 横幅広げる */
+  height: auto;      /* 高さ固定 */
+  position: absolute;
+  top: 215px;
+  right: 15px;       /* 他の画像より前 */
+ /* 切り取り */
+}
+
+
+.back-img-2  {
+  width: 200px;
+  height: auto;
+  top: 215px;
+  right: 220px;
+  position: absolute;
+}
+
+.back-img-3  {
+  width: 200px;
+  height: auto;
+  top: 215px;
+  right: 425px;
+  position: absolute;
+}
+
+.plus-img {
+  position: absolute;
+  width: 30px;
+  top: 50px;
+  left: 158px;
+  z-index: 1;
+}
+
+.White-img  {
+  position: absolute;
+  width: 160px;
+  height: 300px;
+  top: 170px;
+  left: 11px;
+  object-fit: cover;
+}
+
+.press-start {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
+  top: 435px;
+  position: absolute;
+}
+
+
+.stage {
+  left: 200px;
+}
+
+.movie {
+  left: 400px;
+}
+
+.other {
+  right: 100px;
+}
+
+.contact {
+  position: absolute;
+  right: 15px;
+  top: 120px;
+}
+
+.imagiric {
+  position: absolute;
+  right: 15px;
+  top: 90px;
+}
+
+.icon-common {
+  position: absolute; /* 画像のサイズは共通 */
+  left: 25px;
+}
+
+.icon-stage {
+  width: 40px;
+  top: 200px;
+}
+
+.icon-movie {
+  width: 40px;
+  top: 220px;
+}
+
+.icon-other {
+  width: 60px;
+  top: 240px;
+}
+
+.file {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  top: 170px;
+  left: 22px;
+  position: absolute;
+}
+
+.search {
+  position: absolute;
+  top: 87px;
+  left: 172px;
+  width: 525px;
+  height: 65px;
+}
+
+.image-container {
+
+  top: 87px;
+  left: 172px;
+  width: 525px;
+  height: 65px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+
+.visitor {
+  font-family: 'DotGothic16', cursive;
+  position: absolute;
+  top: 95px;
+  left: 200px;
+  font-size: 13px;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black; /* カーソルの線 */
+  width: 0;
+  animation: typing 1s steps(30, end) forwards, blink-caret 0.7s step-end infinite;
+}
+
+/* typingアニメーション：文字数に合わせた幅に広げる */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 30ch; } /* 文字数よりちょっと広めに */
+}
+
+
+/* カーソルの点滅 */
+@keyframes blink-caret {
+  0%, 100% { border-color: black; }
+  50% { border-color: transparent; }
+}
+
+
+
