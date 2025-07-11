@@ -40,24 +40,54 @@
 </head>
 
 <body>
+ <div class="wrapper">
   <div class="image-center">
     <img src="img/bar.svg" alt="バーの画像" class="bar-img">
-    <img src="img/vase.svg" alt="ベースの画像" class="main-img">
+    <img src="img/vase.svg" alt="ベースの画像" class="main-img vase-desktop">
+    <img src="img/vase-media.svg" alt="ベースの画像（スマホ用）" class="main-img vase-mobile">
+    <p class="welcome">Welcome</p>
+    <img src="img/line-5.svg" alt="ラインの画像（スマホ用）" class="line-5">
+    
 
-    <!-- すべてここに入れる -->
-    <div class="sns-buttons">
-      <a href="https://x.com/FUJII_UU" target="_blank" class="btn x">
-        <img src="img/x.svg" alt="x" />
-      </a>
-      <a href="https://www.instagram.com/fujii_uu/" target="_blank" class="btn insta">
-        <img src="img/insta.svg" alt="Instagram" />
-      </a>
-      <a href="https://facebook.com/" target="_blank" class="btn note">
-        <img src="img/note.svg" alt="note" />
-      </a>
-    </div>
+
+<div class="sns-buttons">
+  <div class="sns-group">
+    <a href="https://x.com/FUJII_UU" target="_blank" class="btn x">
+      <img src="img/x.svg" alt="x" class="btn-bg "/>
+      <img src="img/icon-x.svg" alt="Instagram" class="icon-sns" />
+    </a>
+    <p class="sns-x">X</p>
+    <p class="sns-name-x">@fujii_uu</p>
+  </div>
+
+  <div class="sns-group">
+    <a href="https://www.instagram.com/fujii_uu/" target="_blank" class="btn insta">
+      <img src="img/x.svg" alt="Instagram" class="btn-bg"/>
+      <img src="img/icon-insta.svg" alt="Instagram" class="icon-sns" />
+    </a>
+    <p class="sns-insta">Instagram</p>
+    <p class="sns-name-insta">@fujii_uu</p>
+  </div>
+
+  <div class="sns-group">
+    <a href="https://facebook.com/" target="_blank" class="btn note">
+      <img src="img/x.svg" alt="Instagram" class="btn-bg sns-hide-mobile" hidden-button/>
+      <img src="img/icon-web.svg" alt="note" class="icon-sns hidden-icon"/>
+    </a>
+    <p class="sns-web">Web portfolio</p>
+  </div>
+</div>
+
+  <div class="close-group">
+      <img src="img/close.svg" alt="クローズ" class="close-img "/>
+      <img src="img/icon-close.svg" alt="クローズアイコン" class="close-text-img" />
+    <p class="sns-x">X</p>
+    <p class="sns-name-x">@fujii_uu</p>
+  </div>
+
     <a href="mailto:s-ishimoto@imagirick.co.jp">
      <img src="img/contact.svg" alt="contact" class="contact">
+     <p class="text-contact">contact</p>
     </a>
 
     <img src="img/imagiric.svg" alt="imagiric" class="imagiric">
@@ -65,8 +95,10 @@
     <img src="img/line-3.svg" alt="ロングライン3" class="long-line-3">
     <img src="img/line-2.svg" alt="ロングライン2" class="long-line-2">
     <img src="img/name.svg" alt="ネーム画像" class="name-img">
+    <p class="name-uu">藤井 憂憂</p>
     <a href="https://nankyoku.jp/yuugai-tour.html" target="_blank">
     <img src="img/next-stage.svg" alt="次のステージ画像" class="next-stage-img">
+    <p class="next">next stage</p>
     </a>
 
     
@@ -87,6 +119,7 @@
     <img src="img/back.svg" alt="バック画像" class="back-img-3">
 
     <img src="img/plus.svg" alt="プラス画像" class="plus-img">
+    <img src="img/plus-1.svg" alt="プラス画像" class="plus-1-img">
 
     <img src="img/White.svg" alt="ホワイト画像" class="White-img">
     
@@ -105,6 +138,7 @@
 
    <div class="image-container">
     <img src="img/search.svg" alt="サーチ" class="search">
+    <img src="img/search-mobile.svg" alt="サーチ" class="search-mobile">
     <p class="visitor">
     あなたは<span id="todayCount">20</span>番目の訪問です♪
     </p>
@@ -130,8 +164,8 @@
 </script>
 
     
-
   </div>
+ </div>
 </body>
 
 
