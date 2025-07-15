@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- OGP・SNS -->
+  <meta property="og:title" content="藤井憂憂 | Fujii Yuyu">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://uu-fujii.com/">
+  <meta property="og:image" content="http://uu-fujii.com//img/favicon/Yicon-180.png?v=20250701">
+  <meta property="og:description" content="藤井憂憂のホームページ">
+  <meta property="og:site_name" content="藤井憂憂 | Fujii Yuyu">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- CSS・フォント -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+  <!-- favicon・スマホ対応 -->
+  <link rel="icon" href="img/favicon/Yfavicon.ico?v=20250701" sizes="32x32">
+  <link rel="icon" href="img/favicon/Yicon-512.png" sizes="512x512">
+  <link rel="icon" href="img/favicon/Yicon.svg?v=20250701" type="image/svg+xml">
+  <link rel="Yapple-touch-icon" href="img/favicon/Yicon-180.png?v=20250701">
+
+  <!-- Web App manifest -->
+  <link rel="manifest" href="img/favicon/manifest.webmanifest?v=20250701">
+
+  <!-- iOS ホーム画面対応 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="藤井憂憂">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+
+
+<header class="actor-header">
+  <div class="actor-header-left">
+    <p class="actor-name-ja">藤井憂憂</p>
+    <p class="actor-name-en">FUJII YUYU</p>
+  </div>
+
+  <!-- ハンバーガーアイコン -->
+  <div class="hamburger" onclick="document.querySelector('.actor-header-right').classList.toggle('open')">
+    ★
+  </div>
+
+  <!-- ナビゲーションメニュー -->
+  <nav class="actor-header-right">
+    <ul class="actor-nav">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#work">WORK</a></li>
+      <li><a href="#web">WEB</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<hr class="actor-header-line" />
+
+
+<hr class="actor-header-line" />
+
+
+
+
+<section id="about" class="about-section">
+
+  <!-- ABOUT 見出し -->
+  <h2 class="about-title">ABOUT</h2>
+
+  <!-- 画像とテキストを横並びに -->
+  <div class="about-content">
+    
+    <!-- 左：画像 -->
+    <div class="about-image">
+      <img src="img/about.jpeg" alt="ABOUTの写真" class="about-photo">
+    </div>
+
+    <!-- 右：テキストと名前とアイコン -->
+    <div class="about-text-container">
+
+      <!-- 名前と下線 -->
+ <div class="about-header">
+
+  <div class="about-name-social">
+  <div class="about-names">
+    <p class="about-name-ja">藤井憂憂</p>
+    <p class="about-name-en">FUJII YUYU</p>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://x.com/FUJII_UU" target="_blank" rel="noopener" aria-label="X (Twitter)">
+      <img src="img/X-icon.svg" alt="X" class="social-icon">
+    </a>
+    <a href="https://www.instagram.com/fujii_uu/" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="img/Instagram-icon.svg" alt="Instagram" class="social-icon">
+    </a>
+  </div>
+</div>
+
+
+  <hr class="line" />
+
+  <div class="about-text">
+    広島県出身。<br>
+    大学の演劇サークルを経て2023年に上京し、役者の活動をスタート。<br>
+    身長164cm。特技は球技、ピアノ、アコースティックギター。
+  </div>
+ </div>
+</div>
+
+</section>
+
+
+<section class="work-section" id="work">
+  <h2 class="work-title">WORK</h2>
+
+  <!-- 仕事の種類一覧（画像＋ラベル） -->
+  <div class="work-items">
+    <div class="work-item active" data-target="stage">
+      <img src="img/stage.jpg" alt="Stage" class="work-img">
+      <p class="work-label">Stage</p>
+    </div>
+    <div class="work-item" data-target="movie">
+      <img src="img/movie.jpg" alt="Movie" class="work-img">
+      <p class="work-label">Movie</p>
+    </div>
+    <div class="work-item" data-target="cm">
+      <img src="img/cm.jpg" alt="CM" class="work-img">
+      <p class="work-label">CM/TV</p>
+    </div>
+    <div class="work-item" data-target="radio">
+      <img src="img/radio.jpeg" alt="Other" class="work-img">
+      <p class="work-label">Other</p>
+    </div>
+  </div>
+
+  <!-- 詳細表示部分 -->
+  <div class="work-detail">
+
+    <!-- Stage -->
+    <div class="work-content" id="stage" style="display: block;">
+      <!-- 2025 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2025</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">南極第8回公演『ゆうがい地球ワンダーツアー』</p>
+            <p class="work-place">作・演出：こんにち博士　2025年9月4日〜9月7日</p>
+            <p class="work-role">役名 紀寿子</p>
+          </div>
+          <div class="work-entry">
+            <p class="work-company">劇団スポーツ 本公演『逆VUCAより愛をこめて』</p>
+            <p class="work-place">作・演出：内田倭史・田島実紘  下北沢駅前劇場　2025年1月31日〜2月1日</p>
+            <p class="work-role">役名 小川サナ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2024</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">南極 第六回本公演『バード・バーダー・バーデスト』</p>
+            <p class="work-place">すみだパークシアター倉　2024年9月19日〜23日</p>
+            <p class="work-role">役名 カイロ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2023</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">南極 第五回本公演『怪奇星キューのすべて』</p>
+            <p class="work-place">作・演出：こんにち博士 北先住BUoY  2023年8月3日〜6日</p>
+            <p class="work-role">役名 UB</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2020</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">演劇引力廣島第17回プロデュース公演『泥を泳ぐ』</p>
+            <p class="work-place">作・演出 象千誠 アステールプラザ　2020年2月21日〜24日</p>
+            <p class="work-role">役名 佐久間理絵</p>
+          </div>
+          <div class="work-entry">
+            <p class="work-company">第7回中国ブロック劇王決定戦独壇場『マッチアップ』　最優秀俳優賞受賞</p>
+            <p class="work-place">広島市青少年センター 2019年10月</p>
+            <p class="work-role">役名 香</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movie -->
+    <div class="work-content" id="movie" style="display: none;">
+      <!-- 2025 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2025</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">『傷ついた天使』</p>
+            <p class="work-place">監督 田辺洸成</p>
+            <p class="work-role">PFFアワアード2025 入選</p>
+          </div>
+          <div class="work-entry">
+            <p class="work-company">『逆流』</p>
+            <p class="work-place">監督 北野陽太</p>
+            <p class="work-role">仙台短編映画祭 2025 入選</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2024</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">『分離の予感』</p>
+            <p class="work-place">監督 何英傑</p>
+            <p class="work-role">東京学生映画祭 / PFFアワアード2024 / TAMA CINEMA FORUM「ある視点」部門　入選</p>
+          </div>
+          <div class="work-entry">
+            <p class="work-company">『まなざし、まなざす』</p>
+            <p class="work-place">監督 吉本ちひろ</p>
+            <p class="work-role">第16回下北沢映画祭 下北沢商店連合賞受賞</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2022 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2022</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">『こちらあみ子』</p>
+            <p class="work-place">監督 森井勇佑</p>
+            <p class="work-role"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CM/TV -->
+    <div class="work-content" id="cm" style="display: none;">
+      <!-- 2024 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2024</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">株式会社GENDA GiGO Entertainment　ボーリング事業所紹介</p>
+            <p class="work-place"></p>
+            <p class="work-role"></p>
+          </div>
+          <div class="work-entry">
+            <p class="work-company">西都PROJECT『18歳の図書館』</p>
+            <p class="work-place"></p>
+            <p class="work-role">3年後の私</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2023</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">カラオケ  バンガローハウス  小田原店オープン記念『Chaos in da house』</p>
+            <p class="work-place">監督｜脚本　守田悠人</p>
+            <p class="work-role"></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 2020 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2020</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">広島ホームテレビ『恋とか愛とか（仮）』<br>アスリートSP 第1弾「ごっつぁんしない男」</p>
+            <p class="work-place">放送局：広島ホームテレビ</p>
+            <p class="work-role">高校生時代のヒロイン</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other -->
+    <div class="work-content" id="radio" style="display: none;">
+      <!-- 2022 -->
+      <div class="work-year-group">
+        <h3 class="work-year-title"><span class="year-number">2022</span><span class="year-unit">年</span></h3>
+        <div class="work-entries">
+          <div class="work-entry">
+            <p class="work-company">広島FM『大窪シゲキの９ジラジ』</p>
+            <p class="work-role">火曜日アシスタントDJ</p>
+          </div>
+          <div class="work-entry">
+            <p class="work-company">『こちらあみ子』</p>
+            <p class="work-place">監督 森井勇佑</p>
+            <p class="work-role">方言指導(広島弁)、メイキングナレーション</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  
+<section id="web" class="web-section">
+
+  <!-- WEB見出し（重ねない） -->
+  <h2 class="web-title">WEB WORK</h2>
+
+  <!-- Frame画像 + 内容重ね -->
+  <div class="frame-wrapper">
+    <img src="img/Frame 21.jpg" alt="フレーム画像" class="web-frame">
+
+    <div class="frame-overlay">
+      <div class="web-left">
+        <p>
+          ホームページの制作を受け付けています。<br>
+          実績が１０にも満たないため、破格でお受けします。<br><br>
+          <a href="website.html" class="webwork-link" target="_blank" rel="noopener">制作事例についてはこちらからご覧ください。</a>
+        </p>
+
+        <h3 class="contact-title">CONTACT</h3>
+        <ul class="contact-list">
+          <li><a href="mailto:UU.FUJII@gmail.com" class="contact-link">UU.FUJII@gmail.com</a></li>
+          <li><a href="https://x.com/fujii_uu_web" class="contact-link" target="_blank" rel="noopener">Xはこちらから</a></li>
+        </ul>
+      </div>
+
+      <!-- 画像をクリックで別タブで開く -->
+      <div class="web-right">
+        <a href="website.html" target="_blank" rel="noopener">
+          <img src="img/Designer.jpeg" alt="デザイナー画像" class="designer-img">
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.actor-header-right');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const workItems = document.querySelectorAll('.work-item');
+  const workContents = document.querySelectorAll('.work-content');
+
+  // 初期状態はStageをactiveにする
+  workItems.forEach(item => {
+    if (item.dataset.target === 'stage') item.classList.add('active');
+  });
+
+  workItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const target = item.dataset.target;
+
+      // 詳細表示切り替え
+      workContents.forEach(content => {
+        content.style.display = content.id === target ? 'block' : 'none';
+      });
+
+      // クリックされた画像のハイライト切り替え
+      workItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+});
+
+</script>
+
+</html>
