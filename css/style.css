@@ -130,6 +130,25 @@ body.top-page {
 
 
 
+@media screen and (max-width: 768px) {
+  .menu,
+  .big-name,
+  .line {
+    display: none;
+  }
+
+  .name {
+    display: block;
+    font-size: 24px;     /* 必要に応じて調整 */
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
+}
 
 
 
@@ -397,6 +416,9 @@ body.top-page {
 /* ----------------------------
    WEBセクション全体
 ----------------------------- */
+
+
+
 .web-section {
   padding: 30px 150px;
   background-color: #fff;
@@ -444,21 +466,14 @@ body.top-page {
 .frame-overlay {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;  
+  align-items: center;
+  padding: 2rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  max-width: 900px;      /* Aboutセクションと同じ最大幅 */
-  margin: 0 auto;        /* 中央寄せ */
-  padding: 5px 10px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  gap: 40px;
-  z-index: 2;
 }
-
 .web-left,
 .web-right {
   margin-top: 0;
@@ -472,16 +487,16 @@ body.top-page {
 .web-left {
   position: relative;
   flex: 1;
-  max-width: 500px;
+  max-width: 800px;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 0.8rem;
-  line-height: 1.7;
+  line-height: 2.5;
   color: #000;
   text-align: left;
-  margin-top: 5%;
-  margin-bottom: 0;
-  padding: 0 15px;
-  margin-left: 5%;
+  margin-top: -55px;
+  margin-left: 40px;
+  white-space: nowrap;
+
 }
 
 /* CONTACTタイトル */
@@ -528,16 +543,16 @@ body.top-page {
   justify-content: flex-end;     /* ← 右に寄せる */
   box-sizing: border-box;
   width: 100%;
-  padding-right: 5%;           /* 右に少し余白つける */
+  padding-right: 10%;           /* 右に少し余白つける */
   padding-top: 5%;             /* 上も余白調整（任意） */
 }
 
 
 .designer-img {
   position: absolute;
-  top: 20%;     /* 上から20px */
-  right: 10%;   /* 右から20pxの位置に */
-  width: 200px;  /* サイズ調整 */
+  top:50px;     /* 上から20px */
+  right: 140px;   /* 右から20pxの位置に */
+  width: 230px;  /* サイズ調整 */
   z-index: 10;   /* フレーム画像より上に */
 }
 
@@ -551,10 +566,6 @@ h1 {
   margin-top: 10px;
   color: #333;
 }
-
-
-
-
 
 
 
@@ -673,77 +684,42 @@ h1 {
 
 
 
+/* ----------------------------
+   フッター
+----------------------------- */
+.site-footer {
+  background-color: #00000047;     /* 黒背景 */
+  color: #fff;                /* 白文字 */
+  text-align: center;         /* 中央寄せ */
+  padding: 0px 0;            /* 上下の余白 */
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.6rem;
+  width: 100% !important;
+  height: 50px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* 高さはフッターの高さ */
+  background-color: #ccc; /* 背景色など適宜 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  margin: 0;
+  padding-bottom: 60px; /* フッターの高さ分の余白を下に作る */
+}
+
+
+
 
 /* ----------------------------
    レスポンシブ対応
 ----------------------------- */
-@media screen and (max-width: 768px) {
-
-
-   body,
-  html {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
-  .frame-overlay {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-    gap: 30px;
-  }
-
-  .web-left {
-    max-width: 100%;
-    text-align: left;
-    font-size: 0.95rem;
-  }
-
-  .web-right {
-    justify-content: center;
-    padding: 0;
-  }
-
-  .designer-img {
-    width: 180px;
-  }
-
-  .visual {
-    width: 45%; /* 写真を大きく見せる */
-    margin: 40px auto;
-  }
-
-  .photo {
-    filter: drop-shadow(0 0 8px #003366);
-  }
-
-  .name {
-    top: 55%;
-    left: 83%;
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  .line {
-    width: 90%;
-    margin: 15px auto;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 12px;
-    font-size: 0.8rem;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .big-name {
-    font-size: 3.4rem; /* バカデカさをスマホ向けに */
-    margin-bottom: 40px;
-    word-break: break-word;
-    margin-top: 8%;
-  }
-}
 
 
 
@@ -828,6 +804,8 @@ h1 {
   }
 
 
+
+
   .actor-name-ja {
     font-size: 1.5rem; /* 小さく */
     margin-top: 5px; /* 上に余白を追加 */
@@ -842,13 +820,13 @@ h1 {
   .hamburger {
   display: block;
   position: absolute;
-  top: 8px;
-  right: 0px;
+  top: 20px;
+  right: 35px;
   z-index: 100;
   cursor: pointer;    
   font-size: 20px;             /* 大きさ調整 */
   color: white;                /* 中身の色（白抜き） */
-  -webkit-text-stroke: 1.5px rgb(0, 16, 192); /* 縁取り（Safari, Chrome対応） */
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0); /* 縁取り（Safari, Chrome対応） */
   text-stroke: 1.5px rgb(9, 0, 134);           /* 他ブラウザ対応（将来対応） */
   user-select: none;
 }
@@ -893,6 +871,10 @@ h1 {
     gap: 10px;
   }
 
+  .about-title {
+  font-size: 1.3rem;  /* ← 小さく */
+}
+
   .about-text {
   text-align: left;
   margin: 0px 40px 20px 20px; /* 上 右 下 左 */
@@ -915,88 +897,190 @@ h1 {
     margin-right: 0;
   }
 
-  /* ▼ WEBセクション */
+
+
+
+
+
+
+  .work-title {
+  font-size: 1.3rem;  /* ← ここを小さく */
+}
+
+
+ .work-items {
+    display: flex;
+    flex-wrap: wrap;         /* 折り返しOKにする */
+    justify-content: space-between; /* 均等に配置 */
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+ .work-item {
+    width: 22%;
+    min-width: 60px;
+  }
+
+.work-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+      aspect-ratio: 1 / 1;  /* ← 正円を保つ */
+    object-fit: cover;
+}
+
+
+  .work-label {
+    font-size: 0.6rem;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .work-label {
+    font-size: 0.6rem;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+
+.work-company {
+    font-size: 0.7rem; /* ← ここで調整。例: 1.8rem など */
+    line-height: 1.2; /* ← 行間も調整したければここで */
+  }
+
+  .work-role,
+  .work-place{
+    font-size: 0.5rem;  /* 小さくしたい場合 */
+  }
+
+  .year-number {
+    font-size: 0.9rem;   /* 年の部分も小さく */
+  }
+
+ .year-unit {
+  font-size: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+ }
+
+.work-entries {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+ }
+.work-year-title {
+  margin-bottom: 8px; /* デフォルトより小さく */
+  margin-left: 5%;
+  margin-top: 10%;
+  padding-left: 0;
+  text-align: left;
+}
+
+.work-entry {
+  margin-top: 0;    /* 上マージンなし */
+  margin-bottom: 15px; /* 下マージンも少し小さく */
+}
+
+
+
+
+
+
+
+
+
+.web-title {
+    white-space: nowrap;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    font-size: 1.3rem;
+  }
+
   .web-section {
-    padding: 40px 20px;
+    padding: 20px 15px;
   }
-
-  .web-title {
-  font-family: 'Nova Round', sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 0.1em;
-  text-align: center;
-}
+        /* セクション自体を中央に */
 
 
-  .frame-overlay {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 0 20px;
-  }
-
-  .web-left p {
-  max-width: 90%;  
-  margin-top: 30px;
-  margin-left: 8%;
-  text-align: left;
-  font-size: 0.8rem;
-}
-
-.web-left {
-  max-width: 90%;
-  margin: 0 auto;
-  font-size: 0.8rem;
-  text-align: left;
-  padding: 0 10px;
-}
-
-.contact-title {
-    max-width: 90%;
-    margin-left: 8%;
-  }
-
-  /* コンタクトリスト */
-  .contact-list {
-    max-width: 90%;
-    margin-left: 8%;
-  }
-
-
-
-
-  .web-right {
-    justify-content: center;
-    padding: 0;
-  }
 
   .designer-img {
-    position: static;
-    width: 180px;
-    margin-top: 20px;
+    display:none;
+ }
+
+
+
+ .frame-wrapper {
+    position: relative; /* ここは絶対必要 */
+  }
+.frame-overlay {
+    position: absolute !important;  /* 重ねるために絶対位置に */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 10;
+
+    display: flex; /* 好みに応じて */
+    flex-direction: column; /* 縦並び */
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.web-frame {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+ .web-left {
+    position: relative;        /* ← absoluteを解除 */
+    right: auto;
+    top: auto;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    max-width: 90%;
+  }
+
+
+
+.contact-list li {
+    line-height: 1.2; /* ← お好みで1.0〜1.4の間で調整 */
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
 
 
 
+.site-footer {
+  padding-top: 20px;
+  height: 30px;
+}
+
+.footer {
+  height: 30px;
+}
+.body {
+  padding-bottom: 30px;
+}
 
 
-  .work-section {
-    padding: 40px 20px;
+  
+  .frame-wrapper {
+    margin-bottom: 0;
   }
-
-  .work-items {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .work-img {
-    width: 120px;
-    height: 120px;
-  }
-
-
 
 }
+
+
+
+
+
+
+
+
+
