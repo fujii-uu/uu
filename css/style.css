@@ -1183,3 +1183,268 @@ body {
 
 
 
+
+
+
+
+/*WEBページ*/
+
+/* 親コンテナ：縦並び＆左寄せ */
+
+.page-3 {
+  background-color: #FFF0D7;
+  min-height: 100vh; /* ページ全体に背景色を適用 */
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダー全体のスタイル */
+.web-header {
+  padding: 40px;
+  box-sizing: border-box;
+  padding-top: 30px;
+}
+
+.web-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.web-name {
+  font-family: 'Poller One', sans-serif;
+  font-size: 2rem;
+  color: #000;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+.actor-page-link {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.85rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.actor-page-link:hover {
+  text-decoration: underline;
+}
+
+.wave-line-img {
+  display: block;
+  width: 90%;
+  height: 30px;
+  margin: -30px auto 0 auto; /* 上のマージンを-10pxに */
+}
+
+.category-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff; /* ← 通常時：黒文字 */
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background-color: transparent; /* ← 最初は透明 */
+  transition: background-color 0.3s, color 0.3s;
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  background-color: #000000; /* ← 例：ややグレーっぽい背景。お好みで変更OK */
+
+  transition: background-color 0.3s, color 0.3s;
+  position: absolute;
+  top: 30px;     /* ← 少し下に */
+  right: 50px;   /* ← 少し左に（数値を大きくすると左へ） */
+
+}
+
+.category-button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* ← ホバー時：淡い黒背景 */
+  color: #000; /* ← 文字色は変えない */
+}
+
+.category-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.category-text {
+  display: inline-block;
+}
+
+
+.section-heading {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 1.5rem;
+  text-align: left; /* ← 左寄せに変更 */
+  margin-top: 80px;
+  margin-bottom: 30px;
+  letter-spacing: 0.05em;
+  color: #222;
+  padding-left: 12%; /* ← お好みで左に余白 */
+}
+
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+  width: 100%;  /* 追加 */
+  padding-bottom: 50px;
+}
+
+
+.side-image {
+  width: 40vw; /* ビューポート幅の40% */
+  max-width: 400px; /* 最大幅300pxなど */
+  height: auto;
+  object-fit: contain;
+}
+
+.image-wrapper {
+  margin-bottom: 24px;
+}
+
+.image-title {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 100; 
+  font-size: 0.8rem;
+  color: #000000; /* タイトル色（濃い青） */
+  text-align: left;
+  margin: 8px 0 4px 0;
+}
+
+.image-credit {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 100; 
+  font-size: 0.6rem;
+  color: #0000006b; /* クレジット色（グレー） */
+  text-align: left;
+  margin: 0;
+}
+
+
+#categoryMenu {
+  display: none; /* 初期は非表示 */
+  position: fixed;
+  top: 80px;
+  right: 50px;
+  background: #fff;        /* 真っ白背景 */
+  border: 1px solid #000; /* 黒の細い枠線 */
+  padding: 12px 16px;
+  z-index: 10000;
+  border-radius: 8px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 軽い影で浮き上がり感 */
+  color: #000;            /* 文字は黒 */
+}
+
+#categoryMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#categoryMenu ul li a.category-item {
+  color: #000;            /* 黒文字 */
+  text-decoration: none;
+  padding: 6px 10px;
+  display: block;
+  border-radius: 6px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#categoryMenu ul li a.category-item:hover {
+  background-color: #000; /* ホバーで黒背景 */
+  color: #fff;            /* 文字は白に反転 */
+}
+
+
+  
+
+
+
+@media screen and (max-width: 768px) {
+
+  .image-row {
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+  .image-title {
+    font-size: 0.5rem; /* スマホ用に少し小さく */
+    padding-top: 1px;
+    margin-top: 0;
+  }
+
+  .image-credit {
+    font-size: 0.4rem; /* スマホ用に少し小さく */
+    padding-top: 0;
+  }
+  .image-row {
+    gap: 5px; /* 元が30pxなら10pxに減らすなど調整 */
+  }
+
+   #categoryMenu {
+    right: 20px; /* 50px → 20pxにずらして右寄せ */
+    top: 70px;   /* 必要に応じて位置微調整 */
+  }
+  .page-3 {
+    background-color: #FFF0D7;
+    padding: 0 15px; /* 左右に余白追加 */
+  }
+
+  .web-header {
+    padding: 20px 10px; /* 上下と左右に余白 */
+  }
+
+  .web-header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .web-name {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .actor-page-link {
+    font-size: 0.6rem;
+    margin-top: -10px; /* ← 上にあげる（数値は調整OK） */
+  }
+
+  .wave-line-img {
+    width: 100%;
+    height: auto;
+    margin-top: -10px;
+  }
+
+  .category-button {
+    position: fixed; /* スクロールしても見えるように */
+    top: 25px;
+    right: 20px;
+    padding: 8px 12px;
+    font-size: 11px;
+    z-index: 9999;
+    border-radius: 16px;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .category-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .category-text {
+    font-size: 11px;
+  }
+}
