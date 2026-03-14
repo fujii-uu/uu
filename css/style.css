@@ -1,1450 +1,619 @@
-@charset "UTF-8";
-
-@import url('https://fonts.googleapis.com/css2?family=Timmana&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+JP&display=swap');
-
-
-.sans {
-  font-family: "Roboto", "Noto Sans JP", sans-serif;
+*{
+  margin:0;
+  padding:0px;
+  box-sizing:border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 
-.serif {
-  font-family: "Roboto", "Noto Serif JP", serif;
-}
-.zen-kaku {
-  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+html,body{
+  overflow-x:hidden;
 }
 
-.timmana {
-  font-family: 'Timmana', sans-serif;
+/* スマホ（最大幅600pxくらい）向け */
+@media only screen and (max-width: 768px) {
+.top-image-pc{
+  display:none;
 }
 
-
-body.top-page {
-  margin: 0;
-  padding: 0;
+.name-pc{
+  display:none;
 }
 
-.visual {
-  position: relative;
-  width: 15%;
-  max-width: 600px;
-  margin: 50px auto; /* 中央寄せ */
+*{
+  margin:0;
+  padding:5px;
+  box-sizing:border-box;
+}
+  /* WORK / DIARY ボタン */
+.top-buttons{
+  position:absolute;    
+  top:564px !important;            
+
 }
 
-.photo {
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 1;
-  transition: filter 0.3s ease; /* アニメーション */
-  filter: drop-shadow(0 0 4px #003366); /* ←デフォルトの発光（弱め） */
-}
+  /* トップフレーム */
+  .top-frame{
+    width:100%;
+    min-height:67.5vh !important;      /* 今のまま */
 
-.photo:hover {
-  filter: drop-shadow(0 0 20px #025fbd); /* ←ホバー時に強く発光 */
-}
-
-
-.frame {
-  position: absolute;
-  top: 17%;
-  left: 10%;
-  width: 80%;
-  pointer-events: none; /* ←これでフレームがマウスを通すようになる */
-  z-index: 2;
-}
-
-
-
-
-.name {
-  position: absolute;
-  top: 40%;
-  left: 5%;
-  writing-mode: vertical-rl;        /* ←縦書きにする基本指定 */
-  text-orientation: upright;        /* ←文字を正立に保つ */
-  font-size: 11px;
-  font-family: 'Noto Serif JP', serif;
-  color: #003366;
-  line-height: 1.6;
-  letter-spacing: 0.15em;
-}
-
-
-
-
-.name:hover {
-  filter:
-    drop-shadow(0 0 5px #00f2ff)
-    drop-shadow(0 0 10px #00f2ff)
-    drop-shadow(0 0 20px #00f2ff)
-    drop-shadow(0 0 40px #00f2ff); /* ←最強 */
-}
-
-
-
-.actor-header-line {
-  border: none;
-  border-top: 1px solid #333;
-  width: 95%;
-  margin: 3px auto; /* ← ここを小さくする（元は40px） */
-}
-
-
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-family: 'M PLUS 1p', sans-serif;
-  font-weight: 700; /* Bold */
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-
-.menu a {
-  color: #333;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.menu a:hover {
-  text-decoration: underline;
-}
-
-.big-name {
-  text-align: center;
-  font-family: 'Poller One', sans-serif;
-  font-size: 10.05rem;
-  color: #222;
-  margin-bottom: 60px;
-}
-
-.hamburger {
-  display: none;
-}
-
-
-
-
-
-@media screen and (max-width: 768px) {
-  .menu,
-  .big-name,
-  .line {
-    display: none;
   }
 
-  .name {
-    display: block;
-    font-size: 24px;     /* 必要に応じて調整 */
-    text-align: center;
-    margin-top: 20px;
+  .top-buttons{           
+  top:526px !important;            
+
+}
+
+
+
+}
+  body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
   }
 
-  .photo {
-    width: 100%;
-    height: auto;
-  }
-}
-
-
-
-
-
-
-.mobile-menu {
-  display: none;
-}
-
-.mobile-menu.open {
-  display: block;
-}
-
-
-
-
-
-
-
-/*2ページ目*/
-
-/* ハンバーガーメニューOFF時（PCなど） */
-
-.actor-header {
-  display: flex;
-  justify-content: space-between;  /* ← 左右に配置 */
-  align-items: flex-start;
-  padding: 15px 40px;
-  margin-bottom: 0;
-  padding-bottom: 0px; 
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: #fff;
-}
-
-
-.actor-header-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1; 
-}
-
-.actor-header-right {
-  display: flex;        /* ← フレックス化（右寄せのため） */
-  align-items: flex-start; 
-  gap: 30px;
-}
-
-
-.actor-nav {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  padding-left: 0;
-  margin: 0;
-  list-style: none;
-}
-
-
-.actor-nav li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 400;
-  font-family: 'Nova Round', sans-serif; /* ←ここ */
-  transition: opacity 0.3s;
-  font-size: 13px;
-}
-
-
-.actor-nav li a:hover {
-  opacity: 0.6;
-}
-
-.actor-name-ja {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.4rem;           /* お好みで調整（例: 2rem〜2.5rem） */
-  font-weight: 400;
-  margin: -5px 0 4px 0;
-  line-height: 1.2;
-  letter-spacing: 3px;
-}
-
-.actor-name-en {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.5rem;            /* お好みで調整 */
-  font-weight: 500;
-  margin-top: 1px;
-  color: #444;
-  letter-spacing: 0.3em;
-  margin-left: 14px;
-}
-
-
-
-
-
-/* ABOUT セクション */
-.about-section {
-  padding: 40px 20px;
-  background-color: #fff;
-  text-align: left;  /* テキスト左寄せ */
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.about-name-ja {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.4rem;  /* ヘッダーのサイズに合わせる */
-  font-weight: 400;
-  margin: -5px 0 4px 0;  /* ヘッダーのマージン */
-  line-height: 1.2;
-  letter-spacing: 3px;
-  white-space: nowrap;
+  /* トップフレーム */
+  .top-frame{
+    width:100%;
+    min-height:72vh;      /* 今のまま */
+    border:1px solid black;
+    position:relative;
   }
 
+  /* ワークフレーム */
+  .work-frame{
+    width:100%;
+    min-height:900px;      /* ここだけ高さ変更 */
+    border:1px solid black;
+    margin-top:10px;       /* トップとの余白 */
+  }
+  
+ 
 
-.about-name-en {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.5rem;
-  font-weight: 500;
-  margin-top: 1px;
-  color: #444;
-  letter-spacing: 0.3em;
-  justify-content: flex-start;
-  white-space: nowrap;
+
+  /* CONTACTボタン */
+  .contact-button{
+    position:absolute;
+    top:0px;
+    right:0px;
+
+    border:1px solid black;
+    padding:8px 14px;
+
+    font-family:"Nova Round", sans-serif;
+    text-decoration:none;
+    color:black;
+    font-size:14px;
+  }
+
+  .contact-button{
+  transition: transform 0.2s ease;
+}
+
+.contact-button:hover{
+  transform: scale(1.1);
+}
+
+.contact-button:active{
+  transform: scale(0.95);
+}
+
+  /* SNSエリア */
+  .sns{
+    position:absolute;
+    top:502px;
+    right:-5px;
+    display:flex;
+    gap:0px;
+  }
+
+  /* SNSアイコン枠 */
+  .sns-icon{
+    border:1px solid black;
+    padding:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+.sns-icon{
+  transition: transform 0.2s ease;
+}
+
+.sns-icon:hover{
+  transform: rotate(10deg);
+}
+  .sns-icon img{
+    width:24px;
+    height:24px;
+    display:block;
+  }
+  
+  /* フレーム既存設定は省略 */
+
+  /* WORK / DIARY ボタン */
+.top-buttons{
+  position:absolute;
+  left:42px;              
+  top:514px;            
+  display:flex;          
+  gap:0;
+  transform: rotate(-90deg); /* 回転 */
+  transform-origin: left bottom;
 }
 
 
+/* ボタン個別 */
+.top-btn{
+  border:1px solid black;
+  padding:5px 15px;
+  font-family:"Nova Round", sans-serif;
+  text-decoration:none;
+  color:black;
 
+  display:flex;           /* 番号とテキストを横並び */
+  align-items:center;     /* 縦中央揃え */
+  font-size:13px;
 
-.about-title {
-  font-family: 'Nova Round', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  letter-spacing: 0.1em;
-  text-align: center;
+  text-align:left;        /* 左寄せ */
 }
 
-.about-name-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-end; /* 各名前のテキストも右寄せ */
+/* 番号とテキストの間隔 */
+.btn-number{
+  margin-right:30px;      /* 番号と文字の間隔 */
+  font-weight:bold;
 }
 
-.about-name-ja,
-.about-name-en {
-  line-height: 1.3;
+.top-btn:hover{
+  background-color: black;
 }
 
-/* 画像とテキストの横並び用ラッパー */
-.about-content {
-  display: flex;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.about-image {
-  width: 450px;  /* 1:1に近づける */
-  flex-shrink: 0;
-  padding-left: 15px;
-  padding-right: 30px;
+.top-btn:hover .btn-text,
+.top-btn:hover .btn-number{
+  color: white;
 }
 
+ /* 中央より少し左寄りの画像 */
+  .top-image{
+    position:absolute;
+    top:68%;              /* 縦中央 */
+    left:55%;             /* 横中央より少し左 */
+    transform: translate(-50%, -77%); /* 中央基準調整 */
+  }
 
-
-/* 画像自体 */
-.about-photo {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
+  .top-image img{
+    width:310px;   /* 好きなサイズに調整 */
+    height:auto;
+    display:block;
+        border:1px solid black; /* ← 枠を追加 */
+            padding:0;               /* 余白なし */
+    margin:0;                /* 余白なし */
+  }
+  .btn-number{
+  margin-right:30px;       /* 番号とテキストの間隔 */
+  font-weight:bold;
+  color: rgb(0, 0, 0);
+}
+.top-end-line{
+  border:0;                  /* デフォルトの線を消す */
+  border-bottom:1px solid black; /* 下線として表示 */
+  width:100%;
+  margin:0;
 }
 
-/* テキスト */
-.about-text {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.9;
-  color: #333;
-  padding-left: 25px;
+.top-text{
+  position:absolute;
+  top:calc(60% + 150px);  /* 画像の下に配置 */
+  left:10%;                /* 左揃え */
+  display:flex;
+  flex-direction:column;   /* 上から下に並べる */
+  gap:0px;                 /* 行間 */
+  font-family:"M PLUS Rounded 1c", sans-serif; /* 丸ゴシック系 */
 }
 
-
-
-.about-text-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* 左寄せ */
-  gap: 20px;
-  margin-top: 70px;
+/* 小さいテキスト */
+.top-text .small-text{
+  font-size:8px;
+  color:black;
+  letter-spacing: 7px;
+    line-height:0;           /* 行の高さをフォントサイズぴったりに */
 }
 
-.about-header {
-  display: flex;
-  flex-direction: column; /* 縦並び */
-  gap: 20px;
-}
-.about-name-social {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.about-names {
-  display: flex;
-  flex-direction: column;
-   padding-left: 15px;
-}
-
-
-
-
-
-.about-name {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 1.5rem;
+/* 大きいテキスト */
+.top-text .large-text{
+  font-size:24px;
+  font-weight:bold;
+  color:black;
   letter-spacing: 2px;
-  margin-left: 0;
-  text-align: right;
+    line-height:1;           /* 行の高さをフォントサイズぴったりに */
+}
+
+/* まあまあ小さいテキスト */
+.top-text .medium-text{
+  font-size:10px;
+  color:black;
+    line-height:0.8;           /* 行の高さをフォントサイズぴったりに */
+}
+
+.work-title{
+  border:1px solid black;           /* 枠線 */
+  display:inline-block;             /* 文字サイズに合わせて枠 */
+  padding:7px 10px;                /* 内側の余白 */
+  font-family:"Nova Round", sans-serif; /* のばしたフォント */
+  font-size:17px;                   /* 大きめサイズ */
+  font-weight:bold;                  /* 太字 */
+  text-align:center;                 /* 中央揃え */
+  margin:0px 0;                     /* 上下余白 */
+}
+
+.work-item{
+  border:1px solid black;       /* 枠線 */
+  padding:  10px;                 /* 内側余白 */
+  margin-bottom:10px;           /* 下のサブフレームとの間隔 */
+  font-family:"M PLUS Rounded 1c", sans-serif;  
+  font-size:16px;
+  margin-top: 10px;
+}
+
+.work-item-title{
+  display:inline-block;             /* 文字サイズにぴったり */
+      border:1px solid black;
+  padding:5px 15px;                 /* タイトル内の余白 */
+  font-family:"M PLUS Rounded 1c", sans-serif;  font-size:10px;                   /* タイトル文字サイズ */
+  font-weight:bold;
+    font-size: 15px !important;
+  margin-bottom:10px;               /* サブフレーム内容との間隔 */
 }
 
 
-.about-name-social > p {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
 
-/* SNSアイコンは横並び */
-.social-icons {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 0;
-  justify-content: flex-end;
-  width: 100%;  /* 幅を100%にして右寄せを確実に */
-  margin-top: -30px;
-  margin-right: 10%;
-}
-
-
-.social-icon {
-  width: 20px;
-  height: 24px;
-  display: block;
-}
-
-.line {
-  width: calc(110% - 45px); /* 画像の左右パディング分を引く */
-  margin: 0 auto;
-  margin-top: -20px;
-  margin-bottom: 0;
-  line-height: 0;
-  border-top: 1px solid #333;
-  margin-left: 4%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------------------------
-   WEBセクション全体
------------------------------ */
-
-
-
-.web-section {
-  padding: 30px 150px;
-  background-color: #fff;
-  text-align: center;
-}
-
-/* セクションタイトル */
-.web-title {
-  font-family: 'Nova Round', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  letter-spacing: 0.1em;
-}
-
-/* ----------------------------
-   フレーム画像（背景）
------------------------------ */
-.web-frame {
-  width: 100%;
-  height: 320px;     /* ここを調整（例: 400pxに固定） */
-  object-fit: cover; /* 画像の比率を保ちながらカバー */
-  display: block;
-  opacity: 0.1;
-  border-radius: 8px;
-  position: relative;
-  z-index: 1;
-}
-
-
-/* ----------------------------
-   フレームと内容を重ねるラッパー
------------------------------ */
-
-
-.frame-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto 30px;
-  height: 320px;     /* 背景画像の高さに合わせる */
-}
-
-/* フレーム上の内容（テキスト・画像） */
-.frame-overlay {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.web-left,
-.web-right {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-
-/* ----------------------------
-   左側テキストエリア
------------------------------ */
-.web-left {
-  position: relative;
-  flex: 1;
-  max-width: 800px;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 0.8rem;
-  line-height: 2.5;
-  color: #000;
-  text-align: left;
-  margin-top: -55px;
-  margin-left: 40px;
-  white-space: nowrap;
-
-}
-
-/* CONTACTタイトル */
-.contact-title {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 30px;
-  font-family: 'Noto Sans JP', sans-serif;
-  letter-spacing: 2px;
-  margin-bottom: 5px;
-}
-
-/* CONTACTリスト */
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 2px;
-}
-
-.contact-list li {
+/* 年タイトル */
+.stage-year{
+       font-family: "Noto Sans JP", sans-serif ;
+  font-size:16px;
+  font-weight:bold;
+  margin-top:10px;
   margin-bottom:5px;
   letter-spacing: 1px;
 }
 
-.contact-link {
-  font-family: 'Noto Sans JP', sans-serif;
-  text-decoration: underline;
-  color: #000;
+/* 薄い線 */
+.stage-divider{
+  border:0;
+  border-bottom:1px solid #ccc; /* 薄い線 */
+  margin:5px 0;
 }
 
-/* 制作事例リンク */
-.webwork-link {
-  text-decoration: underline;
-  color: #000;
+/* 公演ブロック */
+.stage-performance{
+  font-family:"M PLUS Rounded 1c", sans-serif;
+  font-size:14px;
+  margin-bottom:5px;
 }
 
-/* ----------------------------
-   右側画像エリア
------------------------------ */
-.web-right {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: flex-start;       /* ← 上に寄せる（これが大事！） */
-  justify-content: flex-end;     /* ← 右に寄せる */
-  box-sizing: border-box;
-  width: 100%;
-  padding-right: 10%;           /* 右に少し余白つける */
-  padding-top: 5%;             /* 上も余白調整（任意） */
+/* 公演タイトル */
+.performance-title{
+  margin-bottom:2px;
+  font-size: 15px;
 }
 
-
-.designer-img {
-  position: absolute;
-  top:50px;     /* 上から20px */
-  right: 140px;   /* 右から20pxの位置に */
-  width: 230px;  /* サイズ調整 */
-  z-index: 10;   /* フレーム画像より上に */
+/* 公演詳細 */
+.performance-detail{
+  font-size:12px;
+  margin-bottom:2px;
 }
 
-/* ----------------------------
-   見出し（h1）共通スタイル
------------------------------ */
-h1 {
-  font-family: 'Poller One', sans-serif;
-  font-size: 2.5em;
-  text-align: left;
-  margin-top: 10px;
-  color: #333;
+/* 役名 */
+.performance-role{
+  font-size:13px;
+  margin-bottom:2px;
 }
 
 
 
-
-
-/* ----------------------------
-   WORK セクション
------------------------------ */
-
-
-.work-section {
-  background-color: #fff;
-  display: block;
-  text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+/* Movie専用 */
+.movie-year{
+  font-weight:bold;
+  margin-top:10px;
+  margin-bottom:5px;
+  font-size:16px;
+         font-family: "Noto Sans JP", sans-serif ;
+         letter-spacing: 1px;
 }
 
-.work-title {
-  font-family: 'Nova Round', sans-serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  letter-spacing: 0.1em;
-  text-align: center;
+.movie-divider{
+  border:0;
+  border-bottom:1px solid #ccc;
+  margin:5px 0;
 }
 
-.work-items {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
+.movie-performance{
+  font-size:15px;
+  margin-bottom:5px;
 }
 
-.work-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+.movie-title{
+  margin-bottom:2px;
 }
 
-.work-item.active .work-label {
-  font-weight: 700;
-  border-bottom: 2px solid #333;
+.movie-director{
+  font-size:12px;
+  margin-bottom:2px;
 }
 
-.work-img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
+.movie-award{
+  font-size:12px;
+  margin-bottom:2px;
 }
 
-.work-label {
-  font-family: 'M PLUS 1p', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-top: 15px;
-  letter-spacing: 1px;
+/* Other専用 */
+.other-year{
+  font-weight:bold;
+  margin-top:10px;
+  margin-bottom:5px;
+  font-size:16px;
+           font-family: "Noto Sans JP", sans-serif ;
+         letter-spacing: 1px;
 }
 
-
-.work-entry {
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-  text-align: left;
-  padding: 10px 20px;
-  border-left: 4px solid #000000;  /* 左側の色付きライン */
-  background-color: #dedcdc13;       /* 枠の背景色 */
-  border-radius: 8px;
+.other-divider{
+  border:0;
+  border-bottom:1px solid #ccc;
+  margin:5px 0;
 }
 
-
-.work-year-title {
-  text-align: left;
-  margin-left: 10%;
-  font-weight: bold;
-  font-size: 1.2rem;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 2px;
+.other-performance{
+  font-size:12px;
+  margin-bottom:5px;
 }
 
-
-
-.year-number {
-  font-size: 1.6rem;
+.other-title{
+    font-size: 15px;
+  margin-bottom:2px;
 }
 
-.year-unit {
-  font-size: 1rem; /* 小さくする */
-  font-family: 'Noto Sans JP', sans-serif;
+.other-director,
+.other-detail,
+.other-broadcast,
+.other-role{
+  font-size:12px;
+  margin-bottom:2px;
 }
 
-.work-title-entry {
-  font-size: 5.3rem;
-  display: inline-block;
-  max-width: 80%;
-  vertical-align: middle;
-  font-family: 'Noto Sans JP', sans-serif;
+/* Staff フレーム */
+
+
+.staff-year {
+  font-weight:bold;
+  margin-top:10px;
+  margin-bottom:5px;
+  font-size:16px;
+           font-family: "Noto Sans JP", sans-serif ;
+         letter-spacing: 1px;
 }
 
-.work-role {
-  color: #555;
-  margin-top: 6px;
-  display: block;
-  font-size: 0.8rem;
+.staff-divider {
+  border:0;
+  border-bottom:1px solid #ccc; /* 薄い線 */
+  margin:5px 0;
 }
 
-.work-place {
-  color: #777;
-  font-size: 0.85rem;
-  margin-top: 3px;
+.staff-performance {
+  padding:10px 10px;  /* 内側余白 */
+  margin-bottom:10px;  /* 下の区切りとの余白 */
+  font-family:"M PLUS Rounded 1c", sans-serif;
+  font-size:14px;
 }
 
-
-
-/* ----------------------------
-   フッター
------------------------------ */
-.site-footer {
-  background-color: #00000047;     /* 黒背景 */
-  color: #fff;                /* 白文字 */
-  text-align: center;         /* 中央寄せ */
-  padding: 0px 0;            /* 上下の余白 */
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 0.6rem;
-  width: 100% !important;
-  height: 50px;
+.staff-title {
+  font-size:15px;
+  margin-bottom:3px;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px; /* 高さはフッターの高さ */
-  background-color: #ccc; /* 背景色など適宜 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.staff-detail {
+  font-size:12px;
+  margin-bottom:3px;
+  line-height:1.3;
 }
-body {
-  margin: 0;
-  padding-bottom: 60px; /* フッターの高さ分の余白を下に作る */
+
+.staff-role {
+  font-size:12px;
+  font-weight:normal;
+  color:#000;
 }
 
 
+/* PC用 */
+@media screen and (min-width: 768px) {
 
-
-/* ----------------------------
-   レスポンシブ対応
------------------------------ */
-
-
-
-
-/*2ページ目*/
-
-
-
-/* スマホサイズ用のレイアウト */
-@media screen and (max-width: 768px) {
-  
-
-
-   .menu-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 10001;
-}
-
-   .mobile-menu {
-    display: flex;  /* display: none から切り替え */
-    position: fixed;      
-    top: 0;
-    right: 0;
-    width: 70vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.462);
-    color: white;
-    padding-top: 60px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 9999;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
-  .mobile-menu.open {
-    transform: translateX(0);
-  }
-
-  .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .mobile-menu ul li {
-    margin: 20px 0;
-  }
-
-  .mobile-menu ul li a {
-    color: white;
-    font-size: 1.1rem;
-    text-decoration: none;
-    display: block;
-    padding: 10px 0;
-    transition: color 0.3s;
-    font-family: 'Nova Round', sans-serif;
- 
-  }
-
-  .mobile-menu ul li a:hover {
-    color: #ffcc00;
-  }
-
-  .hamburger {
-    display: block;  /* PCで非表示から表示に */
-    font-size: 2rem;
-    cursor: pointer;
-    user-select: none;
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 10000;
-    color: #333;
-  }
-
-  .hamburger.active {
-    color: #ffcc00;
-  }
-
-  .mobile-menu a {
-    text-decoration: none;
-    color: #81818185;
-    font-size: 18px;
-  }
-
-
-
-  /* PCメニューは非表示 */
-  .actor-header-right {
-    display: none;
-  }
-}
-
-/* PC用ではモバイルメニュー非表示 */
-@media screen and (min-width: 769px) {
-  .mobile-menu {
-    display: none !important;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .actor-header-right {
-    display: block;
-  }
-}
-
-
-
-/* スマホ（768px以下） */
-@media screen and (max-width: 768px) {
-
-
-   body,
-  html {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
-  /* ▼ 共通調整 */
-  h1 {
-    font-size: 1.8em;
-    text-align: center;
-  }
-
-  .visual {
-    width: 45%;
-    margin: 40px auto;
-  }
-
-  .photo {
-    filter: drop-shadow(0 0 8px #003366);
-  }
-
-  .name {
-    top: 55%;
-    left: 83%;
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  .line {
-    width: 90%;
-    margin: 15px auto;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 12px;
-    font-size: 0.8rem;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .big-name {
-    font-size: 3.4rem;
-    margin-bottom: 40px;
-    margin-top: 8%;
-    word-break: break-word;
-  }
-
-
-
-
-
-
-
-  /* ▼ ヘッダー */
-  .actor-header {
-  position: relative; /* ハンバーガーを絶対配置するため */
-}
-
-
-  .actor-header-right {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .actor-header-right.open {
-    display: flex;
-  }
-
-
-
-
-  .actor-name-ja {
-    font-size: 1.5rem; /* 小さく */
-    margin-top: 5px; /* 上に余白を追加 */
-  }
-
-  .actor-name-en {
-    font-size: 0.4rem; /* こちらも小さく */
-    margin-left: 10%;
-    margin-bottom: 5%;
-  }
-
-  .hamburger {
-  display: block;
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  z-index: 100;
-  cursor: pointer;    
-  font-size: 20px;             /* 大きさ調整 */
-  color: white;                /* 中身の色（白抜き） */
-  -webkit-text-stroke: 1.5px rgb(0, 0, 0); /* 縁取り（Safari, Chrome対応） */
-  text-stroke: 1.5px rgb(9, 0, 134);           /* 他ブラウザ対応（将来対応） */
-  user-select: none;
-}
-
-
-
-.hamburger span {
-  display: block;
-  width: 5px;
-  height: 3px;
-  background-color: #000000;
-  margin: 0px 0;
-  border-radius: 2px;
-}
-
-  /* ▼ ABOUTセクション */
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .about-image {
-    width: 90%;
-    padding: 0;
-  }
-
-  .about-text-container {
-    margin-top: 0;
-    padding: 0 10px;
-    align-items: center;
-  }
-
-  .about-header {
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-name-social {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .about-title {
-  font-size: 1.3rem;  /* ← 小さく */
-}
-
-  .about-text {
-  text-align: left;
-  margin: 0px 40px 20px 20px; /* 上 右 下 左 */
-  max-width: 600px;
-  box-sizing: border-box;
-}
-
-.line {
-    margin-top: 15px;   /* お好みの値に調整 */
-    margin-bottom: 0px; /* お好みの値に調整 */
-  }
-
-
-
-
-
-  .social-icons {
-    justify-content: center;
-    margin-top: 10px;
-    margin-right: 0;
-  }
-
-
-
-
-
-
-
-  .work-title {
-  font-size: 1.3rem;  /* ← ここを小さく */
-}
-
-
- .work-items {
-    display: flex;
-    flex-wrap: wrap;         /* 折り返しOKにする */
-    justify-content: space-between; /* 均等に配置 */
-    gap: 10px;
-    padding: 0 10px;
-  }
-
- .work-item {
-    width: 22%;
-    min-width: 60px;
-  }
-
-.work-img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-      aspect-ratio: 1 / 1;  /* ← 正円を保つ */
-    object-fit: cover;
-}
-
-  .work-label {
-    font-size: 0.6rem;
-    margin-top: 5px;
-    text-align: center;
-  }
-
-
-.work-company {
-    font-size: 0.7rem; /* ← ここで調整。例: 1.8rem など */
-    line-height: 1.2; /* ← 行間も調整したければここで */
-  }
-
-  .work-role,
-  .work-place{
-    font-size: 0.5rem;  /* 小さくしたい場合 */
-  }
-
-  .year-number {
-    font-size: 0.9rem;   /* 年の部分も小さく */
-  }
-
- .year-unit {
-  font-size: 10px;
-  margin-bottom: 0;
-  padding-bottom: 0;
- }
-
-.work-entries {
-  padding-left: 0;
-  margin-left: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
- }
-.work-year-title {
-  margin-bottom: 8px; /* デフォルトより小さく */
-  margin-left: 5%;
-  margin-top: 10%;
-  padding-left: 0;
-  text-align: left;
-}
-
-.work-entry {
-  margin-top: 0;    /* 上マージンなし */
-  margin-bottom: 15px; /* 下マージンも少し小さく */
-}
-
-
-
-
-
-
-
-.web-title {
-    white-space: nowrap;
-    margin-bottom: 30px;
-    padding-bottom: 0;
-    font-size: 1.3rem;
-  }
-
-  .web-section {
-    padding: 20px 15px;
-  }
-        /* セクション自体を中央に */
-
-
-
-  .designer-img {
+  .top-image{
     display:none;
- }
-
-
-
- .frame-wrapper {
-    position: relative; /* ここは絶対必要 */
-  }
-.frame-overlay {
-    position: absolute !important;  /* 重ねるために絶対位置に */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    z-index: 10;
-
-    display: flex; /* 好みに応じて */
-    flex-direction: column; /* 縦並び */
-    justify-content: center;
-    align-items: center;
   }
 
-
-.web-frame {
-    display: block;
-    width: 100%;
-    height: 270px;
-  }
- .web-left {
-    position: relative;        /* ← absoluteを解除 */
-    right: auto;
-    top: auto;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    max-width: 90%;
+  .top-frame{
+    width:900px;
+    min-height:600px;
+    padding:0;
+        margin-top:10px; /* ← 上の余白を50pxに設定 */
   }
 
+  .top-image-pc{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
+  .top-image-pc img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    z-index: 0;
+  }
+
+   .sns{
+z-index: 100;
+gap: 5px;
+top: 1rem;
+left: 1rem;
+  }
+
+  .contact-button{
+    z-index: 1000;
+    top: 1rem;
+    right: 1rem;
+  }
+
+.top-buttons{
+  z-index:100;
+
+  transform: rotate(0deg);
+
+  flex-direction:column; /* ←縦並び */
+
+  top:auto;
+  left:auto;
+   gap: 5px;
+  bottom:1rem;
+  right:1rem;
+}
+
+.top-btn{
+  font-size:16px;   /* 好きなサイズ */
+  padding:8px 20px;
+}
 
 
-.contact-list li {
-    line-height: 1.8; /* ← お好みで1.0〜1.4の間で調整 */
-    margin-top: 0;
-    margin-bottom: 0;
+  .work-frame{
+    width:900px;
+  }
+
+    .work-item{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+        border:none;
   }
 
 
+  .work-item-title{
+    border:none;
+}
 
 
-
-  
-  .frame-wrapper {
-    margin-bottom: 0;
+  .work-title{
+    margin:20px;
+  }
+  .stage-year,
+  .movie-year,
+  .other-year,
+  .staff-year{
+    margin-top:40px;
   }
 
+
+  .stage-divider:has(+ .stage-year),
+  .movie-divider:has(+ .movie-year),
+  .other-divider:has(+ .other-year),
+  .staff-divider:has(+ .staff-year){
+    display:none;
+  }
+
+    .stage-performance,
+  .movie-performance,
+  .other-performance,
+  .staff-performance{
+    margin-top:40px;
+    margin-bottom: 40px;
+  }
+
+  .work-item-title{
+    font-size:20px !important;          /* タイトル大きく */
+    border:none;             /* 今の枠を消す */
+    padding:0;
+    margin-top:40px;         /* 上余白 */
+    margin-bottom:10px;      /* 下余白 */
+    display:block;
+       font-family: "Noto Sans JP", sans-serif !important;
+         letter-spacing: 1px;
+         font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*WEBページ*/
-
-/* 親コンテナ：縦並び＆左寄せ */
-
-.page-3 {
-  background-color: #FFF0D7;
-  min-height: 100vh; /* ページ全体に背景色を適用 */
-  margin: 0;
-  padding: 0;
-}
-
-/* ヘッダー全体のスタイル */
-.web-header {
-  padding: 40px;
-  box-sizing: border-box;
-  padding-top: 30px;
-}
-
-.web-header-left {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-}
-
-.web-name {
-  font-family: 'Poller One', sans-serif;
-  font-size: 2rem;
-  color: #000;
-  margin: 0;
-  letter-spacing: 4px;
-}
-
-.actor-page-link {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 0.85rem;
-  color: #333;
-  text-decoration: none;
-}
-
-.actor-page-link:hover {
-  text-decoration: underline;
-}
-
-.wave-line-img {
-  display: block;
-  width: 90%;
-  height: 30px;
-  margin: -30px auto 0 auto; /* 上のマージンを-10pxに */
-}
-
-.category-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: #ffffff; /* ← 通常時：黒文字 */
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 20px;
-  background-color: transparent; /* ← 最初は透明 */
-  transition: background-color 0.3s, color 0.3s;
-  position: absolute;
-  top: 20px;
-  right: 16px;
-  background-color: #000000; /* ← 例：ややグレーっぽい背景。お好みで変更OK */
-
-  transition: background-color 0.3s, color 0.3s;
-  position: absolute;
-  top: 30px;     /* ← 少し下に */
-  right: 50px;   /* ← 少し左に（数値を大きくすると左へ） */
-
-}
-
-.category-button:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* ← ホバー時：淡い黒背景 */
-  color: #000; /* ← 文字色は変えない */
-}
-
-.category-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.category-text {
-  display: inline-block;
-}
-
-
-.section-heading {
-  font-family: 'M PLUS 1p', sans-serif;
-  font-weight: 700; /* Bold */
-  font-size: 1.5rem;
-  text-align: left; /* ← 左寄せに変更 */
-  margin-top: 80px;
-  margin-bottom: 30px;
-  letter-spacing: 0.05em;
-  color: #222;
-  padding-left: 12%; /* ← お好みで左に余白 */
-}
-
-
-.image-row {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 40px 0;
-  width: 100%;  /* 追加 */
-  padding-bottom: 50px;
-}
-
-
-.side-image {
-  width: 40vw; /* ビューポート幅の40% */
-  max-width: 400px; /* 最大幅300pxなど */
-  height: auto;
-  object-fit: contain;
-}
-
-.image-wrapper {
-  margin-bottom: 24px;
-}
-
-.image-title {
-  font-family: 'Rounded Mplus 1c', sans-serif;
-  font-weight: 100; 
-  font-size: 0.8rem;
-  color: #000000; /* タイトル色（濃い青） */
-  text-align: left;
-  margin: 8px 0 4px 0;
-}
-
-.image-credit {
-  font-family: 'Rounded Mplus 1c', sans-serif;
-  font-weight: 100; 
-  font-size: 0.6rem;
-  color: #0000006b; /* クレジット色（グレー） */
-  text-align: left;
-  margin: 0;
-}
-
-
-#categoryMenu {
-  display: none; /* 初期は非表示 */
-  position: fixed;
-  top: 80px;
-  right: 50px;
-  background: #fff;        /* 真っ白背景 */
-  border: 1px solid #000; /* 黒の細い枠線 */
-  padding: 12px 16px;
-  z-index: 10000;
-  border-radius: 8px;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 13px;
-  line-height: 1.6;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 軽い影で浮き上がり感 */
-  color: #000;            /* 文字は黒 */
-}
-
-#categoryMenu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#categoryMenu ul li a.category-item {
-  color: #000;            /* 黒文字 */
-  text-decoration: none;
-  padding: 6px 10px;
-  display: block;
-  border-radius: 6px;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-#categoryMenu ul li a.category-item:hover {
-  background-color: #000; /* ホバーで黒背景 */
-  color: #fff;            /* 文字は白に反転 */
-}
-
-
   
 
-
-
-@media screen and (max-width: 768px) {
-
-  .image-row {
-  padding-bottom: 0px;
-  margin-bottom: 0;
+  .work-item-title::after{
+    content:"";
+    display:block;
+    width:100%;              /* work-frameいっぱい */
+    height:1px;
+    background:black;
+    margin-top:8px;          /* タイトルとの距離 */
+       font-family: "Noto Sans JP", sans-serif ;
 }
-  .image-title {
-    font-size: 0.5rem; /* スマホ用に少し小さく */
-    padding-top: 1px;
-    margin-top: 0;
+
+  .performance-title,
+  .movie-title,
+  .other-title,
+  .staff-title{
+    margin-bottom:20px;
   }
 
-  .image-credit {
-    font-size: 0.4rem; /* スマホ用に少し小さく */
-    padding-top: 0;
-  }
-  .image-row {
-    gap: 5px; /* 元が30pxなら10pxに減らすなど調整 */
-  }
-
-   #categoryMenu {
-    right: 20px; /* 50px → 20pxにずらして右寄せ */
-    top: 70px;   /* 必要に応じて位置微調整 */
-  }
-  .page-3 {
-    background-color: #FFF0D7;
-    padding: 0 15px; /* 左右に余白追加 */
+  .performance-detail,
+  .movie-director,
+  .other-detail,
+  .staff-detail{
+    margin-bottom:16px;
   }
 
-  .web-header {
-    padding: 20px 10px; /* 上下と左右に余白 */
+  .performance-role,
+  .other-role,
+  .staff-role{
+    margin-bottom:6px;
   }
 
-  .web-header-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+
+    .name-pc{
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    font-family:"M PLUS Rounded 1c", sans-serif;
+    font-size:50px;
+
   }
 
-  .web-name {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+  .name-pc span{
+    position:absolute;
+    text-shadow:8px 4px 4px rgba(0, 0, 0, 0.258);
+  transition: transform 1.2s ease;
   }
 
-  .actor-page-link {
-    font-size: 0.6rem;
-    margin-top: -10px; /* ← 上にあげる（数値は調整OK） */
+  .top-text{
+    display: none;
+  }
+  .ji1{
+    top:21%;
+    left:58%;
   }
 
-  .wave-line-img {
-    width: 100%;
-    height: auto;
-    margin-top: -10px;
+  .ji2{
+    top:30%;
+    left:61%;
   }
 
-  .category-button {
-    position: fixed; /* スクロールしても見えるように */
-    top: 25px;
-    right: 20px;
-    padding: 8px 12px;
-    font-size: 11px;
-    z-index: 9999;
-    border-radius: 16px;
-    background-color: #000;
-    color: #fff;
+  .ji3{
+    top:36%;
+    left:67%;
   }
 
-  .category-icon {
-    width: 16px;
-    height: 16px;
+  .ji4{
+    top:45%;
+    left:71%;
   }
 
-  .category-text {
-    font-size: 11px;
-  }
+
 }
